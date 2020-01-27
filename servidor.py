@@ -16,15 +16,11 @@ def controleResposta(conexaoAluno, endereco):
             elif op == '2':
                 conexaoAluno.send('2'.encode())
                 conexaoAluno.send('Você está deixando a sala!.'.encode())
-                # time = datetime.now()
-                # conexaoAluno.sendall(str(nomesAlunos[conexaoAluno]).encode()+' saiu da sala em '.encode()+str(time).encode())
+                time = datetime.now()
+                conexaoAluno.sendall(str(nomesAlunos[conexaoAluno]).encode()+' saiu da sala em '.encode()+str(time).encode())
                 sair(conexaoAluno,endereco, time)
                 
         except:
-            # for aluno in conexoes:
-            #     if aluno!=conexao:
-            #         print(aluno.sendall(str(nomesAlunos[conexao]).encode()+' saiu da sala'.encode()))
-            #         break
             conexao.close()
 
 
